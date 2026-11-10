@@ -1,0 +1,53 @@
+Como devo me preparar para uma transição de carreira de engenharia de software para 
+gestão de produtos nos próximos 12 meses? 
+Comportamento esperado com planejamento: - - - - 
+O agente mostra o processo de raciocínio 
+Divide a transição em fases e requisitos de habilidades 
+Considera várias estratégias de preparação 
+Analisa quais habilidades desenvolver e em que ordem 
+- 
+Apresenta um roteiro estruturado em fases 
+Resultado: 
+[Processo de raciocínio - visível porque include_thoughts=True] - Análise da lacuna de habilidades: habilidades de engenharia (tem) versus habilidades 
+de PM (precisa desenvolver) - Principais competências de PM: estratégia de produtos, pesquisa de usuários, gestão 
+de partes interessadas, roteiros - Habilidades transferíveis de ESW: conhecimento técnico, análise de dados, execução 
+de projetos - Cronograma: em 12 meses é possível uma transição gradual ainda empregado - Estratégia: desenvolver habilidades → adquirir experiência como PM → networking → 
+transição 
+[Resposta final] 
+Este é o roteiro de 12 meses para sua transição de engenharia de software para gestão 
+de produtos: 
+1-3 meses: desenvolver conhecimento básico de PM - Ler livros importantes sobre PM (Inspired, Lean Product Playbook) - Fazer cursos on-line sobre PM (Reforge, escola on-line de gestão de produtos) - Começar a escrever especificações de produtos para os recursos atuais da sua equipe - Observar discretamente seu/sua PM nas reuniões 
+4-6 meses: desenvolver habilidades importantes de PM - Liderar todo o processo de um pequeno recurso (da especificação ao lançamento) - Conduzir entrevistas com usuários do produto da sua equipe - Praticar gestão de partes interessadas no papel atual - Elaborar um portfólio de artefatos de produtos (especificações, roteiros, análises 
+de métricas) 
+7-9 meses: adquirir experiência e visibilidade como PM - Voluntariar-se para projetos que envolvem PM (planejamento de roteiro, pesquisa de 
+usuários) - Iniciar um projeto do lado do PM para demonstrar as habilidades - Interagir com PMs (entrevistas informais, encontros de PMs) - Receber mentoria de PM de alguém com esse papel 
+10-12 meses: busca ativa de oportunidades - Atualizar o currículo destacando conquistas relevantes de PM - Candidatar-se a programas de APM ou cargos de PM em empresas menores - Aproveitar as oportunidades internas, se disponíveis - Preparar-se para assumir o papel de PM IC (não sênior) inicialmente 
+Essa abordagem gradual permite que você desenvolva as habilidades ainda empregado e 
+reduz riscos. 
+
+Teste 2: pergunta simples e direta (observe a diferença) 
+Tente este comando: 
+Qual é a capital da França? 
+Comportamento esperado: - - - 
+Mesmo com o uso do planejamento, as perguntas simples recebem respostas diretas 
+Esforço mínimo de raciocínio para consultas simples 
+O agente adapta a complexidade à tarefa 
+
+Teste 3: análise de prós e contras 
+Tente este comando: 
+Devo alugar ou comprar uma casa em São Francisco se meus planos são de morar lá por 
+3-5 anos? 
+Comportamento esperado com planejamento: - - - - - 
+Avalia as duas opções de forma sistemática 
+Considera as implicações financeiras (entrada, custos mensais, patrimônio líquido, 
+custo de oportunidade) 
+Analisa fatores específicos de mercado (preços de moradia em São Francisco, controle 
+de aluguel, valorização) 
+Avalia o impacto do cronograma de 3 a 5 anos 
+Apresenta recomendações contextuais com cenários 
+Atenção aos seguintes pontos: - - - - 
+O processo de raciocínio fica visível quando include_thoughts=True 
+Problemas complexos passam por análise estruturada com planejamento 
+Perguntas simples continuam eficientes mesmo com o planner 
+Os limites de orçamento afetam a profundidade do raciocínio (2.048 tokens = análise 
+detalhada)
