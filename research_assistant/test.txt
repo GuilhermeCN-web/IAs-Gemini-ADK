@@ -1,0 +1,30 @@
+Teste 1: atualidades
+Você: Quais são os últimos desenvolvimentos em energia renovável?
+Comportamento esperado:
+- O agente utiliza a Pesquisa Google para encontrar informações atualizadas
+- A resposta inclui os desenvolvimentos recentes
+- As fontes são citadas
+- As informações estão atualizadas
+Atenção aos seguintes pontos:
+- O agente pesquisou automaticamente na web
+- A resposta é baseada em dados atuais, não em dados de treinamento
+- As fontes podem ser verificadas
+Teste 2: pesquisa factual
+Você: Quem é o atual CEO da Microsoft?
+Comportamento esperado:
+- O agente busca informações atualizadas
+- Retorna respostas precisas e atualizadas
+- Cita a fonte
+Atenção aos seguintes pontos:
+- A resposta reflete a realidade atual, não os dados de treinamento
+- A pesquisa fornece fontes confiáveis
+Teste 3: pesquisa complexa
+Você: Compare veículos elétricos e veículos com célula de combustível de
+hidrogênio
+Comportamento esperado:
+- O agente busca múltiplas perspectivas
+- Sintetiza informações a partir dos resultados da pesquisa
+- Oferece uma visão geral equilibrada com fontes
+Atenção aos seguintes pontos:
+- O agente consegue lidar com consultas complexas e multifacetadas
+- Os resultados da pesquisa fornecem uma resposta abrangente
