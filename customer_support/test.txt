@@ -1,0 +1,27 @@
+Teste 1: tratamento de erros com validação de formato
+Você: Verifique o pedido 123 para mim
+Esperado: o agente chama check_order_status("123"), recebe o erro
+invalid_format, explica o formato correto "ORD" com um exemplo e pede o código do
+pedido correto.
+Conceito-chave: a orientação de instruções específicas para o erro resulta em uma resposta
+útil e educativa.
+
+Teste 2: fluxo de trabalho sequencial com múltiplas ferramentas
+Você: Gostaria de solicitar o reembolso do pedido ORD789 porque o
+produto não atendeu às minhas expectativas
+Esperado: o agente segue esta sequência:
+1. Chama check_order_status("ORD789") para verificar se o pedido existe e qual é
+o status
+2. Chama process_refund("ORD789", reason) com informações do pedido
+3. Confirma o reembolso com o valor, número de referência e prazo
+Conceito-chave: as instruções orientam a sequência correta de ferramentas, ou seja, verificar
+ANTES de agir.
+
+Teste 3: tratamento de erros com canal de encaminhamento para um supervisor
+Você: Reembolse meu pedido ORD456, por favor (Observação: ORD456 está "em
+processamento", não "entregue")
+Esperado: o agente chama check_order_status, depois process_refund, recebe o erro
+cannot_refund, explica a política (apenas pedidos entregues) e oferece o encaminhamento
+para um supervisor.
+Conceito-chave: as instruções definem canais de encaminhamento para um supervisor
+quando as ferramentas não conseguem resolver o problema
