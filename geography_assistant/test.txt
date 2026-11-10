@@ -1,0 +1,40 @@
+Teste 1: consulta básica sobre capitais
+Você: qual é a capital do Japão?
+Comportamento esperado:
+- O agente chama get_capital_city(country="Japão")
+- A ferramenta retorna "Tóquio"
+- O agente responde: “A capital do Japão é Tóquio.”
+Atenção aos seguintes pontos:
+- O agente selecionou automaticamente a ferramenta correta.
+- O agente extraiu corretamente “Japão” como parâmetro de país.
+- O agente formatou o resultado da ferramenta em linguagem natural.
+Teste 2: múltiplas capitais
+Você: Diga as capitais da França, Alemanha e Brasil
+Comportamento esperado:
+- O agente chama get_capital_city três vezes (uma vez para cada país).
+- Ferramenta retorna: “Paris”, “Berlim”, “Brasília”.
+- O agente fornece uma lista formatada.
+Atenção aos seguintes pontos:
+- O agente orquestra múltiplas chamadas de ferramentas.
+- O agente entende que precisa chamar a ferramenta para cada país.
+- O agente sintetiza os resultados em uma resposta coesa.
+Teste 3: capital desconhecida
+Você: Qual é a capital da Islândia?
+Comportamento esperado:
+- O agente chama get_capital_city(country="Islândia")
+- A ferramenta retorna: “Desculpe, não tenho informações sobre a capital da Islândia.”
+- O agente transmite isso educadamente ao usuário.
+Atenção aos seguintes pontos:
+- O agente lida com mensagens de erro de forma adequada.
+- A mensagem de erro da ferramenta é fácil de entender pelo usuário.
+- O agente não alucina uma resposta quando os dados não estão disponíveis.
+Teste 4: nenhuma ferramenta necessária
+Você: Fale sobre geografia
+Comportamento esperado:
+- O agente responde sem chamar nenhuma ferramenta.
+- Utiliza conhecimentos gerais sobre geografia.
+- Nenhuma invocação de ferramenta ocorre.
+Atenção aos seguintes pontos:
+- As ferramentas são chamadas apenas quando necessário.
+- O agente usa seu raciocínio para determinar se há necessidade de ferramentas.
+- Nem toda consulta requer uma ferramenta.
