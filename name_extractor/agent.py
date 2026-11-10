@@ -1,0 +1,9 @@
+from google.adk.agents import LlmAgent
+
+# Single agent that extracts and saves name
+root_agent = LlmAgent(
+    model="gemini-flash-latest",
+    name="name_extractor",
+    instruction="Extract the person's name from the message. Return ONLY the name, nothing else.",
+    output_key="user_name"  # Saves response to state["user_name"]
+)
