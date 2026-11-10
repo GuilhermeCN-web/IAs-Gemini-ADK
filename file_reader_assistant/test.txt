@@ -1,0 +1,29 @@
+Teste 1: listar arquivos
+Você: Quais arquivos estão na pasta?
+Comportamento esperado:
+- O agente chama a ferramenta list_directory via MCP
+- A ferramenta retorna a lista de arquivos na pasta my_files
+- O agente apresenta a lista de arquivos para você
+Atenção aos seguintes pontos:
+- O agente descobriu e utilizou a ferramenta do MCP automaticamente.
+- Não foi necessário nenhum código de ferramenta personalizado, o servidor MCP
+forneceu tudo.
+Teste 2: ler um arquivo
+Você: Mostre o conteúdo de hello.txt
+Comportamento esperado:
+- O agente chama a ferramenta read_file com o caminho do arquivo.
+- A ferramenta retorna o conteúdo do arquivo.
+- O agente apresenta o conteúdo para você.
+Atenção aos seguintes pontos:
+- O agente invocou corretamente a ferramenta MCP com o argumento correto.
+- O conteúdo dos arquivos é retornado pelo protocolo MCP.
+Teste 3: operações múltiplas
+Você: Liste os arquivos e depois leia o arquivo notes.txt
+Comportamento esperado:
+- O agente começa chamando list_directory.
+- O agente então chama read_file para notes.txt.
+- O agente apresenta ambos os resultados juntos.
+Atenção aos seguintes pontos:
+- O agente orquestra várias chamadas de ferramentas do MCP.
+- Os mesmos padrões que você aprendeu no Módulo 1 se aplicam às ferramentas do
+MCP
