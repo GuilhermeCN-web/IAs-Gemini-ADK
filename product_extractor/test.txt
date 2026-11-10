@@ -1,0 +1,29 @@
+Teste 1: informações completas 
+Você: "Eu quero o iPhone 15 Pro com 256 GB em Space Black por US$ 999" 
+Saída JSON esperada: 
+{ 
+} 
+"product_name": "iPhone 15 Pro", 
+"price": 999.0, 
+"storage": "256GB", 
+"color": "Space Black" 
+
+Teste 2: cor ausente 
+Você: "Samsung Galaxy S24 com 512 GB, valor US$ 1.199" 
+Saída JSON esperada: 
+{ 
+} 
+"product_name": "Samsung Galaxy S24", 
+"price": 1199.0, 
+"storage": "512GB", 
+"color": "Não especificado" 
+
+Teste 3: outro formato 
+Você: "Encontre para mim um MacBook Pro 1TB, que custa US$ 2.499" 
+Saída JSON esperada: 
+{ 
+} 
+"product_name": "MacBook Pro", 
+"price": 2499.0, 
+"storage": "1TB", 
+"color": "Não especificado"
