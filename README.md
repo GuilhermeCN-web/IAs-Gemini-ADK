@@ -1,55 +1,17 @@
-# Minha Primeira IA — Tutor de Matemática
+# 🤖 Meus Agentes de IA com Google ADK
 
-Meu primeiro projeto prático de desenvolvimento de agentes de inteligência artificial, utilizando Python, Google ADK e Gemini.
+Este projeto reúne dois agentes de inteligência artificial desenvolvidos em Python utilizando o **Google Agent Development Kit (ADK)** e modelos Gemini.
 
-O projeto consiste em um agente tutor de matemática, desenvolvido para auxiliar estudantes na resolução de problemas matemáticos por meio de explicações detalhadas, cálculos e justificativas passo a passo.
+O objetivo é explorar a criação, configuração e execução de agentes capazes de realizar tarefas diferentes por meio de instruções personalizadas.
 
-## Sobre o projeto
+## 🚀 Tecnologias utilizadas
 
-A aplicação utiliza o **Google Agent Development Kit (ADK)** para estruturar e executar um agente de inteligência artificial, enquanto o **Gemini** é utilizado como modelo de linguagem (LLM).
+- **Python** — linguagem de programação.
+- **Google ADK** — framework para desenvolvimento e execução de agentes.
+- **Google Gemini** — modelo de inteligência artificial utilizado pelos agentes.
+- **Google AI Studio** — obtenção da chave de API para acessar os modelos Gemini.
 
-O modelo de linguagem não foi desenvolvido por mim. Minha contribuição está na construção e configuração do agente, definição de suas instruções, comportamento e finalidade.
-
-## Tecnologias utilizadas
-
-- **Python:** linguagem de programação utilizada no desenvolvimento.
-- **Google ADK:** framework responsável pela criação e execução do agente.
-- **Gemini:** modelo de linguagem utilizado para interpretar perguntas e gerar respostas.
-- **Google AI Studio:** plataforma utilizada para obter a chave de API.
-- **python-dotenv:** biblioteca para carregamento de variáveis de ambiente.
-
-## Como funciona?
-
-O funcionamento do agente pode ser dividido em quatro etapas:
-
-1. **Entrada:** o estudante envia uma pergunta ou problema matemático.
-2. **Processamento:** o Google ADK recebe a solicitação e a encaminha ao modelo Gemini.
-3. **Geração da resposta:** o Gemini interpreta o problema e produz uma resolução seguindo as instruções configuradas no agente.
-4. **Saída:** o agente apresenta os cálculos, as explicações e a conclusão ao estudante.
-
-## Exemplo de funcionamento
-
-Um dos testes realizados utilizou um problema envolvendo o lançamento de uma cápsula, cuja altura era representada pela função:
-
-\[
-h(t)=-5t^2+60t+25
-\]
-
-O agente precisava calcular a altura máxima, determinar o intervalo em que a cápsula permanecia acima de 150 metros e verificar se um sistema de recuperação atendia às condições necessárias para funcionar.
-
-O agente conseguiu:
-
-- Calcular o instante e a altura máxima utilizando o vértice da função quadrática.
-- Resolver uma inequação do segundo grau.
-- Utilizar derivadas para calcular a velocidade instantânea.
-- Verificar as condições de funcionamento do sistema.
-- Apresentar uma resolução completa, com justificativas matemáticas.
-
-Esse teste demonstrou a capacidade do agente de resolver problemas que exigem várias etapas de raciocínio matemático.
-
-## Estrutura do projeto
-
-A estrutura identificada no VS Code é:
+## 📁 Estrutura do projeto
 
 ```text
 adk-workspace/
@@ -58,142 +20,145 @@ adk-workspace/
 │
 └── my_first_agent/
     │
-    ├── my_agent/
-    │   ├── __init__.py
-    │   ├── .env
-    │   ├── .gitignore
-    │   ├── agent.py
-    │   └── root_agent.yaml
-    │
-    ├── my_config_agent/
-    │   ├── .adk/
-    │   ├── .env
-    │   ├── .gitignore
-    │   └── root_agent.yaml
-    │
-    ├── __init__.py
+    ├── agent.py
     ├── .env
     ├── .gitignore
-    └── agent.py
+    ├── __init__.py
+    │
+    ├── my_agent/
+    │   ├── agent.py
+    │   ├── __init__.py
+    │   ├── .env
+    │   └── .gitignore
+    │
+    └── my_config_agent/
+        ├── root_agent.yaml
+        ├── .env
+        └── .gitignore
 ```
 
-### Arquivos e diretórios principais
+## 🧠 Agentes desenvolvidos
 
-- **`my_agent/`**: diretório do agente tutor de matemática.
-- **`agent.py`**: contém a definição e as instruções do agente.
-- **`__init__.py`**: permite que o Python reconheça o diretório como um pacote.
-- **`root_agent.yaml`**: arquivo de configuração associado ao agente.
-- **`.env`**: armazena variáveis de ambiente, incluindo a chave de API.
-- **`.gitignore`**: define quais arquivos e diretórios devem ser ignorados pelo Git.
-- **`.venv/`**: ambiente virtual utilizado pelo Python.
-- **`my_config_agent/`**: diretório utilizado em um exercício de configuração do Google ADK, separado do projeto principal.
+### 1. Tutor de Matemática
 
-## Como executar
+**Nome:** `math_tutor_agent`
+
+Um agente desenvolvido para auxiliar estudantes no aprendizado de matemática, principalmente em problemas de álgebra.
+
+**Principais características:**
+- Explica problemas matemáticos passo a passo.
+- Auxilia na resolução de equações.
+- Apresenta cálculos e justificativas.
+- Ajuda o estudante a compreender o raciocínio por trás das respostas.
+- Utiliza uma abordagem paciente e educativa.
+
+**Arquivo principal:** `my_agent/agent.py`
+
+### 2. Especialista em Suporte Técnico
+
+**Nome:** `support_specialist`
+
+Um agente desenvolvido para atuar como especialista em atendimento e suporte técnico.
+
+**Principais características:**
+- Demonstra empatia diante dos problemas apresentados.
+- Faz perguntas para compreender melhor a situação.
+- Oferece soluções claras e organizadas.
+- Evita inventar informações técnicas.
+- Respeita limites de segurança e privacidade.
+- Identifica situações que devem ser encaminhadas para equipes especializadas.
+
+**Metodologia de atendimento:**
+
+1. **Reconhecer:** demonstra compreensão do problema.
+2. **Esclarecer:** faz perguntas para identificar a causa.
+3. **Resolver:** apresenta possíveis soluções.
+4. **Verificar:** confirma se o problema foi resolvido.
+
+**Arquivo principal:** `agent.py` (na pasta raiz `my_first_agent`).
+
+> Observação: o encaminhamento para outras equipes é uma orientação definida nas instruções do agente. Atualmente, ele não possui integração real para abrir chamados ou transferir atendimentos.
+
+## ⚙️ Configuração do ambiente
 
 ### 1. Pré-requisitos
 
 - Python instalado.
 - Google ADK instalado.
-- Chave de API do Google AI Studio.
+- Uma chave de API do Google AI Studio.
 
 ### 2. Ativar o ambiente virtual
 
-Abra o terminal na pasta `adk-workspace` e execute:
+No terminal, acesse a pasta do projeto e ative o ambiente virtual:
 
 ```powershell
-.venv\Scripts\Activate.ps1
+cd C:\Users\guias\adk-workspace
+.\.venv\Scripts\Activate.ps1
 ```
 
-### 3. Acessar o diretório dos agentes
+Depois, entre na pasta dos agentes:
 
 ```powershell
 cd my_first_agent
 ```
 
-### 4. Executar o agente tutor de matemática
+### 3. Configurar a chave de API
+
+Crie ou edite o arquivo `.env` correspondente ao agente e configure:
+
+```env
+GOOGLE_GENAI_USE_ENTERPRISE=0
+GOOGLE_API_KEY=SUA_CHAVE_DE_API
+```
+
+Substitua `SUA_CHAVE_DE_API` pela sua chave do Google AI Studio.
+
+**Importante:** não compartilhe sua chave de API e não a envie para o GitHub. Verifique se os arquivos `.env` estão protegidos pelo `.gitignore`.
+
+## ▶️ Como executar os agentes
+
+Com o ambiente virtual ativado e dentro da pasta `my_first_agent`, execute:
+
+**Tutor de Matemática:**
 
 ```powershell
 adk web my_agent
 ```
 
-O servidor será iniciado localmente.
+**Especialista em Suporte Técnico:**
 
-Acesse a interface pelo navegador:
-
-```text
-http://127.0.0.1:8000
+```powershell
+adk web .
 ```
 
-### 5. Utilizar o agente
-
-Após abrir a interface:
-
-1. Selecione o agente disponível.
-2. Envie um problema matemático.
-3. Aguarde o processamento.
-4. Analise a resolução apresentada.
-
-Para encerrar o servidor, pressione `CTRL + C` no terminal.
-
-### Executar o exercício de configuração
-
-O diretório `my_config_agent` corresponde a um exercício separado do projeto principal.
-
-Para executá-lo:
+**Exercício de configuração do ADK:**
 
 ```powershell
 adk web my_config_agent
 ```
 
-Depois, acesse novamente:
+Após iniciar o servidor, acesse:
 
-```text
-http://127.0.0.1:8000
-```
+[http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-## Configuração do agente
+Para encerrar a execução, pressione `Ctrl + C` no terminal.
 
-O arquivo `my_agent/agent.py` contém a definição do agente principal.
+> Execute um agente por vez na porta padrão 8000. O comando `adk web .` utiliza a pasta atual como diretório do agente; caso apresente erro, confira a estrutura e a mensagem exibida pelo terminal.
 
-Exemplo da configuração atual:
+## 📚 Aprendizados
 
-```python
-from google.adk.agents.llm_agent import Agent
+Durante o desenvolvimento deste projeto, foram explorados conceitos como:
 
-root_agent = Agent(
-    model='gemini-3.8-flash',
-    name='root_agent',
-    description=(
-        'Ajuda estudantes a aprender álgebra com orientação '
-        'pelas etapas de solução de problemas.'
-    ),
-    instruction=(
-        'Você é um orientador de matemática paciente. '
-        'Ajude os estudantes a resolver problemas de álgebra.'
-    ),
-)
-```
+- Criação e configuração de agentes com Google ADK.
+- Utilização de modelos Gemini.
+- Personalização de comportamento por meio de instruções.
+- Definição de identidade, objetivos e limites de atuação.
+- Organização de projetos Python.
+- Configuração de variáveis de ambiente.
+- Execução e testes de agentes por meio da interface web do ADK.
 
-Nessa configuração:
+## 🎯 Objetivo do projeto
 
-- `model`: identifica o modelo de linguagem utilizado.
-- `name`: define o nome interno do agente.
-- `description`: descreve a finalidade do agente.
-- `instruction`: estabelece como ele deve se comportar e auxiliar os estudantes.
+Este repositório representa uma etapa de aprendizado no desenvolvimento de aplicações com inteligência artificial, explorando como diferentes agentes podem ser configurados para desempenhar funções específicas.
 
-## Segurança
-
-A chave de API deve permanecer protegida.
-
-- Não compartilhe sua chave de API.
-- Não publique arquivos `.env` no GitHub.
-- Verifique se os arquivos `.gitignore` ignoram os arquivos de credenciais.
-- Nunca coloque sua chave diretamente no código-fonte.
-
-## Objetivo do projeto
-
-Este projeto representa meu primeiro contato prático com a criação e configuração de agentes de inteligência artificial.
-
-O objetivo é desenvolver conhecimentos em Python, integração com modelos de linguagem, engenharia de prompts e construção de aplicações utilizando frameworks de IA.
-
-**Desenvolvido como projeto de aprendizado em Inteligência Artificial.**
+O projeto poderá ser expandido futuramente com novas funcionalidades, ferramentas e integrações.
