@@ -1,0 +1,49 @@
+Teste 1: pesquisa de voos
+Você: Quero um voo para Paris em 2025-12-15
+Comportamento esperado:
+- O agente chama search_flights(destination="Paris",
+departure_date="2025-12-15")
+- A ferramenta retorna 2 opções de voo
+- O agente apresenta opções com números de voo, preços e durações
+Atenção aos seguintes pontos:
+- O agente extraiu automaticamente o destino e a data a partir da linguagem natural
+- A ferramenta retornou dados estruturados com múltiplas opções de voo
+- O agente formatou os resultados de forma natural para o usuário
+Teste 2: planejamento completo da viagem
+Você: Planeje uma viagem de 3 noites para Tóquio a partir de 2025-12-20
+Comportamento esperado:
+1. O agente chama search_flights(destination="Tokyo",
+departure_date="2025-12-20")
+2. Agente chama search_hotels(city="Tokyo",
+check_in_date="2025-12-20")
+3. O agente escolhe um voo e um hotel com preços razoáveis dentre as opções
+disponíveis
+4. O agente chama calculate_trip_budget(flight_price, hotel_price, 3)
+5. O agente apresenta o plano de viagem completo com o detalhamento dos custos totais
+Atenção aos seguintes pontos:
+- O agente orquestrou 3 chamadas de ferramentas diferentes
+- As ferramentas funcionaram juntas sequencialmente
+- A resposta final sintetiza todas as informações
+- Apresentação de dados estruturados em linguagem natural
+Teste 3: tratamento de erros
+Você: Encontre hotéis em Londres
+Comportamento esperado:
+- O agente chama search_hotels(city="London", check_in_date=...)
+- A ferramenta retorna o erro: {"status": "error", "error_message": "Nenhum
+hotel encontrado em Londres. Tente Paris ou Tóquio."}
+- O agente pede desculpas educadamente
+- O agente sugere destinos disponíveis
+Atenção aos seguintes pontos:
+- O tratamento de erros é elegante
+- O agente não alucina dados de hotéis para cidades sem suporte
+- Orientações claras sobre os destinos disponíveis
+- O tom profissional foi mantido mesmo com erros
+Teste 4: apenas cálculo de orçamento
+Você: Qual é o custo total de um voo de US$ 450 e um hotel de US$ 150
+por noite por 4 noites?
+Comportamento esperado:
+- O agente chama calculate_trip_budget(flight_price=450,
+hotel_price=150, num_nights=4)
+- A ferramenta retorna o detalhamento
+- O agente apresenta: voo US$ 450 + hotel US$ 600 (4 noites × US$ 150) = Total US$
+1.050
