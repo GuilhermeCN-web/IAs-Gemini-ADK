@@ -1,164 +1,157 @@
-# 🤖 Meus Agentes de IA com Google ADK
+﻿# Agentes de IA com Google ADK
 
-Este projeto reúne dois agentes de inteligência artificial desenvolvidos em Python utilizando o **Google Agent Development Kit (ADK)** e modelos Gemini.
+Coleção de projetos de estudo em Python que explora diferentes padrões de agentes com o Google Agent Development Kit (ADK) e modelos Gemini. Cada pasta é um exemplo independente: há agentes conversacionais simples, extração estruturada, uso de ferramentas, estado de sessão, planejamento e integração com pesquisa ou MCP.
 
-O objetivo é explorar a criação, configuração e execução de agentes capazes de realizar tarefas diferentes por meio de instruções personalizadas.
+> Os agentes com bases de pedidos, voos, hotéis e capitais usam dados fixos de demonstração. Eles não consultam sistemas comerciais reais nem processam transações reais.
 
-## 🚀 Tecnologias utilizadas
+## Índice
 
-- **Python** — linguagem de programação.
-- **Google ADK** — framework para desenvolvimento e execução de agentes.
-- **Google Gemini** — modelo de inteligência artificial utilizado pelos agentes.
-- **Google AI Studio** — obtenção da chave de API para acessar os modelos Gemini.
+- [Projetos](#projetos)
+- [Requisitos e configuração](#requisitos-e-configuração)
+- [Como executar](#como-executar)
+- [Conceitos explorados](#conceitos-explorados)
 
-## 📁 Estrutura do projeto
+## Projetos
 
-```text
-adk-workspace/
-│
-├── .venv/
-│
-└── my_first_agent/
-    │
-    ├── agent.py
-    ├── .env
-    ├── .gitignore
-    ├── __init__.py
-    │
-    ├── my_agent/
-    │   ├── agent.py
-    │   ├── __init__.py
-    │   ├── .env
-    │   └── .gitignore
-    │
-    └── my_config_agent/
-        ├── root_agent.yaml
-        ├── .env
-        └── .gitignore
-```
+### `my_first_agent` — agente básico de perguntas
 
-## 🧠 Agentes desenvolvidos
+Agente introdutório chamado `math_tutor_agent`, criado com `Agent`. Apesar do nome, suas instruções atuais são genéricas: ele responde às perguntas conforme seu conhecimento, sem ferramenta ou fluxo especializado.
 
-### 1. Tutor de Matemática
+**Arquivo:** `my_first_agent/agent.py`
 
-**Nome:** `math_tutor_agent`
+### `my_agent` — tutor de álgebra
 
-Um agente desenvolvido para auxiliar estudantes no aprendizado de matemática, principalmente em problemas de álgebra.
+Agente simples voltado a ajudar estudantes com problemas de álgebra e orientar a resolução por etapas. É uma versão focada em matemática, embora suas instruções ainda sejam curtas.
 
-**Principais características:**
-- Explica problemas matemáticos passo a passo.
-- Auxilia na resolução de equações.
-- Apresenta cálculos e justificativas.
-- Ajuda o estudante a compreender o raciocínio por trás das respostas.
-- Utiliza uma abordagem paciente e educativa.
+**Arquivo:** `my_agent/agent.py`
 
-**Arquivo principal:** `my_agent/agent.py`
+### `customer_support_agent` — suporte técnico
 
-### 2. Especialista em Suporte Técnico
+Agente de suporte que segue quatro etapas: reconhecer o problema, esclarecer os detalhes, sugerir uma solução e confirmar o resultado. As instruções também definem limites de privacidade e encaminhamento para equipes apropriadas; não há integração real para criar chamados ou transferir casos.
 
-**Nome:** `support_specialist`
+**Arquivo:** `customer_support_agent/agent.py`
 
-Um agente desenvolvido para atuar como especialista em atendimento e suporte técnico.
+### `customer_support` — pedidos, reembolsos e escalonamento
 
-**Principais características:**
-- Demonstra empatia diante dos problemas apresentados.
-- Faz perguntas para compreender melhor a situação.
-- Oferece soluções claras e organizadas.
-- Evita inventar informações técnicas.
-- Respeita limites de segurança e privacidade.
-- Identifica situações que devem ser encaminhadas para equipes especializadas.
+Agente de e-commerce com três ferramentas Python:
 
-**Metodologia de atendimento:**
+- `check_order_status`: consulta uma pequena base de pedidos em memória.
+- `process_refund`: simula reembolso apenas para pedidos entregues.
+- `escalate_to_supervisor`: simula o encaminhamento e gera um identificador de tíquete.
 
-1. **Reconhecer:** demonstra compreensão do problema.
-2. **Esclarecer:** faz perguntas para identificar a causa.
-3. **Resolver:** apresenta possíveis soluções.
-4. **Verificar:** confirma se o problema foi resolvido.
+Os dados e resultados são simulados; não há conexão com clientes, pagamentos ou atendimento humano real.
 
-**Arquivo principal:** `agent.py` (na pasta raiz `my_first_agent`).
+**Arquivo:** `customer_support/agent.py`
 
-> Observação: o encaminhamento para outras equipes é uma orientação definida nas instruções do agente. Atualmente, ele não possui integração real para abrir chamados ou transferir atendimentos.
+### `travel_agent` — planejamento de viagem
 
-## ⚙️ Configuração do ambiente
+Pesquisa opções de voos e hotéis e estima o custo de passagem mais hospedagem. As ferramentas têm dados fixos para Paris e Tóquio; não consultam companhias aéreas, hotéis ou preços atuais.
 
-### 1. Pré-requisitos
+**Arquivo:** `travel_agent/agent.py`
+
+### `geography_assistant` — capitais de países
+
+Responde perguntas sobre capitais usando a função `get_capital_city` e um dicionário local com alguns países. Não é uma base geográfica completa.
+
+**Arquivo:** `geography_assistant/agent.py`
+
+### `product_extractor` — extração estruturada de produtos
+
+Extrai nome, preço, armazenamento e cor de uma mensagem. Define o formato de saída com Pydantic (`ProductInfo`) e guarda o resultado na chave `extracted_product` do estado da sessão.
+
+**Arquivo:** `product_extractor/agent.py`
+
+### `name_extractor` — extração de nomes
+
+Extrai o nome de uma pessoa mencionado na mensagem e configura a resposta para ser salva em `user_name` no estado da sessão.
+
+**Arquivo:** `name_extractor/agent.py`
+
+### `personalized_greeter` — saudação com estado
+
+Personaliza uma saudação usando variáveis de estado como nome, idioma preferido e nível de associação. Os valores padrão são usados quando não há dados no estado.
+
+**Arquivo:** `personalized_greeter/agent.py`
+
+### `namespace_demo` — demonstração de templating
+
+Repete o exemplo de saudação personalizada para demonstrar substituição de valores e padrões em instruções. É um exemplo separado de `personalized_greeter`, não uma dependência dele.
+
+**Arquivo:** `namespace_demo/agent.py`
+
+### `research_assistant` — pesquisa na web
+
+Assistente que usa a ferramenta `google_search` para perguntas que dependem de informação atual e orienta a citar fontes e reconhecer limitações dos resultados.
+
+**Arquivo:** `research_assistant/agent.py`
+
+### `file_reader_assistant` — leitura de arquivos via MCP
+
+Usa o servidor de sistema de arquivos do MCP para listar e ler arquivos. O caminho permitido é `file_reader_assistant/my_files`, e o agente expõe somente as ferramentas de leitura `list_directory` e `read_file`.
+
+**Arquivo:** `file_reader_assistant/agent.py`  
+**Arquivos de exemplo:** `file_reader_assistant/my_files/`
+
+### `problem_solver` — resolução estratégica de problemas
+
+Agente orientado a decompor problemas, analisar abordagens, planejar e propor recomendações. Configura o `BuiltInPlanner` com parâmetros de pensamento do modelo.
+
+**Arquivo:** `problem_solver/agent.py`
+
+### `model_comparison` — comparação de configurações
+
+Define dois agentes com objetivos e parâmetros distintos:
+
+- `data_extractor`: prioriza extração factual consistente, com temperatura baixa e saída limitada.
+- `creative_brainstormer`: prioriza geração de ideias variadas, com temperatura mais alta.
+
+A pasta demonstra configurações contrastantes de geração; não contém, por si só, um mecanismo de avaliação automática entre os resultados.
+
+**Arquivo:** `model_comparison/agent.py`
+
+## Requisitos e configuração
 
 - Python instalado.
-- Google ADK instalado.
-- Uma chave de API do Google AI Studio.
+- Google ADK e dependências dos exemplos instalados no ambiente Python.
+- Chave de API do Google AI Studio para os modelos Gemini.
+- Para `file_reader_assistant`, Node.js/npx disponível para iniciar o servidor MCP de sistema de arquivos.
 
-### 2. Ativar o ambiente virtual
-
-No terminal, acesse a pasta do projeto e ative o ambiente virtual:
-
-```powershell
-cd C:\Users\guias\adk-workspace
-.\.venv\Scripts\Activate.ps1
-```
-
-Depois, entre na pasta dos agentes:
-
-```powershell
-cd my_first_agent
-```
-
-### 3. Configurar a chave de API
-
-Crie ou edite o arquivo `.env` correspondente ao agente e configure:
+Configure a variável `GOOGLE_API_KEY` no ambiente ou no arquivo `.env` reconhecido pelo ADK para o agente. Exemplo:
 
 ```env
-GOOGLE_GENAI_USE_ENTERPRISE=0
-GOOGLE_API_KEY=SUA_CHAVE_DE_API
+GOOGLE_API_KEY=sua_chave_aqui
 ```
 
-Substitua `SUA_CHAVE_DE_API` pela sua chave do Google AI Studio.
+Mantenha a chave privada e não a envie para o Git. Os arquivos `.env` não devem conter segredos versionados.
 
-**Importante:** não compartilhe sua chave de API e não a envie para o GitHub. Verifique se os arquivos `.env` estão protegidos pelo `.gitignore`.
+## Como executar
 
-## ▶️ Como executar os agentes
-
-Com o ambiente virtual ativado e dentro da pasta `my_first_agent`, execute:
-
-**Tutor de Matemática:**
+No PowerShell, a partir da raiz do repositório, ative o ambiente virtual (se já estiver configurado) e inicie um agente:
 
 ```powershell
-adk web my_agent
+.\.venv\Scripts\Activate.ps1
+adk web customer_support
 ```
 
-**Especialista em Suporte Técnico:**
+Troque `customer_support` pelo nome da pasta do agente que deseja abrir. Por exemplo:
 
 ```powershell
-adk web .
+adk web travel_agent
+adk web research_assistant
+adk web file_reader_assistant
 ```
 
-**Exercício de configuração do ADK:**
+A interface web do ADK informa o endereço local ao iniciar. Para encerrar, pressione `Ctrl+C` no terminal. Execute um agente por vez na mesma porta padrão.
 
-```powershell
-adk web my_config_agent
-```
+> `model_comparison` define dois agentes no mesmo arquivo e não declara um `root_agent`; pode exigir configuração adicional para seleção/execução pela interface web do ADK.
 
-Após iniciar o servidor, acesse:
+## Conceitos explorados
 
-[http://127.0.0.1:8000](http://127.0.0.1:8000)
+- Instruções e identidade de agentes com `Agent` e `LlmAgent`.
+- Ferramentas Python chamadas pelo agente.
+- Saídas estruturadas com Pydantic.
+- Estado de sessão e templating de instruções.
+- Parâmetros de geração e planejamento.
+- Pesquisa web e integração com ferramentas MCP.
 
-Para encerrar a execução, pressione `Ctrl + C` no terminal.
-
-> Execute um agente por vez na porta padrão 8000. O comando `adk web .` utiliza a pasta atual como diretório do agente; caso apresente erro, confira a estrutura e a mensagem exibida pelo terminal.
-
-## 📚 Aprendizados
-
-Durante o desenvolvimento deste projeto, foram explorados conceitos como:
-
-- Criação e configuração de agentes com Google ADK.
-- Utilização de modelos Gemini.
-- Personalização de comportamento por meio de instruções.
-- Definição de identidade, objetivos e limites de atuação.
-- Organização de projetos Python.
-- Configuração de variáveis de ambiente.
-- Execução e testes de agentes por meio da interface web do ADK.
-
-## 🎯 Objetivo do projeto
-
-Este repositório representa uma etapa de aprendizado no desenvolvimento de aplicações com inteligência artificial, explorando como diferentes agentes podem ser configurados para desempenhar funções específicas.
-
-O projeto poderá ser expandido futuramente com novas funcionalidades, ferramentas e integrações.
+Os projetos são exemplos de aprendizado. As integrações simuladas devem ser conectadas a serviços reais e protegidas adequadamente antes de qualquer uso em produção.
